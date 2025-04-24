@@ -1,0 +1,151 @@
+{
+    "0": {
+        "charge": 1,
+        "formula": "NH4"
+    },
+
+    "1": {
+        "charge": -1,
+        "formula": "CH3COO"
+    },
+
+    "2": {
+        "charge": -1,
+        "formula": "C6H5COO"
+    },
+
+    "3": {
+        "charge": -3,
+        "formula": "BO3"
+    },
+
+    "4": {
+        "charge": -2,
+        "formula": "CO3"
+    },
+
+    "5": {
+        "charge": -1,
+        "formula": "HCO3"
+    },
+
+    "6": {
+        "charge": -1,
+        "formula": "ClO4"
+    },
+
+    "7": {
+        "charge": -1,
+        "formula": "ClO3"
+    },
+
+    "8": {
+        "charge": -1,
+        "formula": "ClO2"
+    },
+
+    "9": {
+        "charge": -1,
+        "formula": "ClO"
+    },
+
+    "10": {
+        "charge": -2,
+        "formula": "CrO4"
+    },
+
+    "11": {
+        "charge": -2,
+        "formula": "Cr2O7"
+    },
+
+    "12": {
+        "charge": -1,
+        "formula": "CN"
+    },
+    
+    "13": {
+        "charge": -1,
+        "formula": "OH"
+    },
+
+    "14": {
+        "charge": -1,
+        "formula": "IO3"
+    },
+
+    "15": {
+        "charge": -1,
+        "formula": "NO3"
+    },
+
+    "16": {
+        "charge": -1,
+        "formula": "NO2"
+    },
+
+    "17": {
+        "charge": -2,
+        "formula": "OOCCOO"
+    },
+
+    "18": {
+        "charge": -1,
+        "formula": "HOOCCOO"
+    },
+
+    "19": {
+        "charge": -1,
+        "formula": "MnO4"
+    },
+
+    "20": {
+        "charge": -3,
+        "formula": "PO4"
+    },
+
+    "21": {
+        "charge": -2,
+        "formula": "HPO4"
+    },
+
+    "22": {
+        "charge": -1,
+        "formula": "H2PO4"
+    },
+
+    "23": {
+        "charge": -2,
+        "formula": "SO4"
+    },
+
+    "24": {
+        "charge": -1,
+        "formula": "HSO4"
+    },
+
+    "25": {
+        "charge": -2,
+        "formula": "SO3"
+    },
+
+    "26": {
+        "charge": -1,
+        "formula": "HSO3"
+    },
+
+    "27": {
+        "charge": -1,
+        "formula": "CNO"
+    },
+
+    "28": {
+        "charge": -1,
+        "formula": "SCN"
+    },
+
+    "29": {
+        "charge": -2,
+        "formula": "S2O3"
+    }
+}

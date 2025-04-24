@@ -1,0 +1,7 @@
+PeriodicTableJSON.json: https://github.com/Bowserinator/Periodic-Table-JSON
+Liscensed under Creative Commons Attribution-ShareAlike 3.0 Unported
+
+Element names in French: https://allperiodictables.com/aptpages/apt_3_ElementNamesFrench.htm
+
+Polyatomic ions data: Chimie 11 STSE, Chenelière-McGraw Hill (2011)
+Element charges: Chimie 11 STSE, Chenelière-McGraw Hill (2011)
