@@ -91,7 +91,7 @@ def generate_polyatomic_ion_questions(questionTypes: list[str], pool: list[int],
             questions.append(langs.add_contractions(langs.get_question_text(questionId, lang), langs.get_polyatomic_ion_name(polyatomicIonIds[i], lang), lang=lang))
             
             # Get charge(s)
-            charge = f"[{utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "charge")}]"
+            charge = f"[{utils.get_polyatomic_ion_data('num', polyatomicIonIds[i], 'charge')}]"
             charge = utils.format_charges(charge)
             answers.append(charge)
         
@@ -100,7 +100,7 @@ def generate_polyatomic_ion_questions(questionTypes: list[str], pool: list[int],
             questions.append(langs.get_question_text(questionId, lang).format(utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "formula")))
             
             # Get charge(s)
-            charge = f"[{utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "charge")}]"
+            charge = f"[{utils.get_polyatomic_ion_data('num', polyatomicIonIds[i], 'charge')}]"
             charge = utils.format_charges(charge)
             answers.append(charge)
     
