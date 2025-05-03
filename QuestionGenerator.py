@@ -106,7 +106,7 @@ def generate_polyatomic_ion_questions(questionTypes: list[str], pool: list[int],
     
     return (questions, answers)
 
-def generate_questions(element_question_types: list[str], polyatomic_ion_question_types: list[str], element_pool: list[int], polyatomic_ion_pool: list[int], count: int = 1, lang: str = "en", questionTypeWeights: list[int] | None = None) -> tuple[str, str]:
+def generate_questions(element_question_types: list[str], polyatomic_ion_question_types: list[str], element_pool: list[int], polyatomic_ion_pool: list[int], count: int = 1, lang: str = "en", questionTypeWeights: list[int] | None = None, return_question_types: bool = False) -> tuple[list[str], list[str], list[str]] |  tuple[list[str], list[str]]:
     """Generates questions."""
     questionIds = utils.random.choices(element_question_types + polyatomic_ion_question_types, weights=questionTypeWeights, k=count)
 
@@ -142,4 +142,16 @@ def generate_questions(element_question_types: list[str], polyatomic_ion_questio
             answers.append(p2[1][p2_count])
             p2_count += 1
 
-    return (questions, answers)
+    qTypes = ("ENTS", "STEN", "COFE", "COFS", "PNTF", "FTPN", "PNTC", "PFTC")
+    types = []
+    for question in questions:
+        for qType in qTypes:
+            if question.startswith(langs.get_question_text(qType, lang).split("{")[0]):
+                types.append(qType)
+                break
+    
+    if return_question_types:
+        return (questions, answers, types)
+
+    else:
+        return (questions, answers)

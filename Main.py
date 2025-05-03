@@ -57,7 +57,7 @@ elif poolChoice == "A":
     element_pool = all_elements
 
 # Generate questions and answers
-questions, answers = generate_questions(["ENTS", "STEN", "COFE", "COFS"], ["PNTF", "FTPN", "PNTC", "PFTC"], element_pool, polyatomic_ion_pool, questionCount, LANG, [0.15, 0.15, 0.1, 0.1, 0.15, 0.15, 0.1, 0.1])
+questions, answers, question_types = generate_questions(["ENTS", "STEN", "COFE", "COFS"], ["PNTF", "FTPN", "PNTC", "PFTC"], element_pool, polyatomic_ion_pool, questionCount, LANG, [0.15, 0.15, 0.1, 0.1, 0.15, 0.15, 0.1, 0.1], return_question_types=True)
 
 # Amoutn of characters to type all answers
 answer_char_count = sum(len(s) for s in answers)
@@ -65,58 +65,12 @@ answer_char_count = sum(len(s) for s in answers)
 start_time = time.time_ns()
 
 for i in range(questionCount):
-    allow_unordered_charges = False
-    # Check if the question is case-sensitive
-    if questions[i].startswith(langs.get_question_text("STEN", LANG).split("{")[0]) or questions[i].startswith(langs.get_question_text("FTPN", LANG).split("{")[0]):
-        case_sensitive_answer = False
-
-    else:
-        case_sensitive_answer = True
-    
-    # TODO: Is this needed?
-    # Check if the question is space-sensitive
-    if questions[i].startswith(langs.get_question_text("COFE", LANG).split("{")[0]) or questions[i].startswith(langs.get_question_text("COFS", LANG).split("{")[0]):
-        space_sensitive_answer = False
-
-        # Check if the order of numbers matters
-        if not charge_order_sensitive:
-            allow_unordered_charges = True
-    
-    else:
-        space_sensitive_answer = True
-
     # Generate question and answer
     print("\n" + questions[i])
     response = input(langs.get_ui_text("ask_answer", LANG))
 
-    # Make case-sensitive adjustments, if necessary
-    if not case_sensitive_answer:
-        response = response.lower()
-        answers[i] = answers[i].lower()
-    
-    # Make space-sensitive adjustments, if necessary
-    if not space_sensitive_answer:
-        response = response.replace(" ", "")
-        answers[i] = answers[i].replace(" ", "")
-
-    if allow_unordered_charges:
-        # Order the charges
-        response = response.split(",")
-        response.sort()
-
-        answer_copy = answers[i].split(",")
-        answer_copy.sort()
-
-        # Check the charges
-        if response == answer_copy:
-            correct_answer = True
-
-        else:
-            correct_answer = False
-
-    # Default action
-    else:
-        correct_answer = response == answers[i]
+    # Check if the answer is correct
+    correct_answer = utils.check_answer(response, answers[i], question_types[i], LANG, charge_order_sensitive)
 
     # Check if the answer is correct
     if correct_answer:
