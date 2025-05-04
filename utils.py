@@ -30,6 +30,8 @@ POLYATOMIC_ION_FILE_NAME = "PolyatomicIons.json"
 POLYATOMIC_ION_FOLDER_PATH = os.path.dirname(os.path.abspath(__file__))
 POLYATOMIC_ION_FILE_PATH = os.path.join(POLYATOMIC_ION_FOLDER_PATH, POLYATOMIC_ION_FILE_NAME)
 
+QUESTION_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "QuestionData.json")
+
 # Load elements
 with open(ELEMENT_FILE_PATH, "r", encoding="utf-8") as datasheet:
     ELEMENTS: dict = json.load(datasheet)["elements"]
@@ -39,6 +41,48 @@ ELEMENT_COUNT = len(ELEMENTS)
 # Load polyatomic ions
 with open(POLYATOMIC_ION_FILE_PATH, "r", encoding="utf-8") as datasheet:
     POLYATOMIC_IONS: dict = json.load(datasheet)
+
+# Load question data
+with open(QUESTION_DATA_PATH, "r", encoding="utf-8") as datasheet:
+    QUESTION_DATA: dict = json.load(datasheet)
+
+def check_answer(user_answer: str, correct_answer: str, questionType: str, lang: str, charge_order_sensitive: bool = True):
+    # Check if the question is case-sensitive
+    case_sensitive_answer = QUESTION_DATA[questionType]["captialisation_sensitive"]
+
+    # Check if the answer is space-sensitive
+    space_sensitive_answer = QUESTION_DATA[questionType]["space_sensitive"]
+    
+    # Make case-sensitive adjustments, if necessary
+    if not case_sensitive_answer:
+        user_answer = user_answer.lower()
+        correct_answer = correct_answer.lower()
+    
+    # Make space-sensitive adjustments, if necessary
+    if not space_sensitive_answer:
+        user_answer = user_answer.replace(" ", "")
+        correct_answer = correct_answer.replace(" ", "")
+
+    if not charge_order_sensitive:
+        # Order the charges
+        user_answer = user_answer.split(",")
+        user_answer.sort()
+
+        answer_copy = correct_answer.split(",")
+        answer_copy.sort()
+
+        # Check the charges
+        if user_answer == answer_copy:
+            is_answer_correct = True
+
+        else:
+            is_answer_correct = False
+
+    # Default action
+    else:
+        is_answer_correct = user_answer == correct_answer
+
+    return is_answer_correct
 
 def get_custom_element_pool(allowDuplicates: bool = True) -> list[int]:
     """Returns a pool of elements, given by the user. `allowDuplicates` removes all duplicate entries when set to `False`."""

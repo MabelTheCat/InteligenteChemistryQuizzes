@@ -91,7 +91,7 @@ def generate_polyatomic_ion_questions(questionTypes: list[str], pool: list[int],
             questions.append(langs.add_contractions(langs.get_question_text(questionId, lang), langs.get_polyatomic_ion_name(polyatomicIonIds[i], lang), lang=lang))
             
             # Get charge(s)
-            charge = f"[{utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "charge")}]"
+            charge = f"[{utils.get_polyatomic_ion_data('num', polyatomicIonIds[i], 'charge')}]"
             charge = utils.format_charges(charge)
             answers.append(charge)
         
@@ -100,13 +100,13 @@ def generate_polyatomic_ion_questions(questionTypes: list[str], pool: list[int],
             questions.append(langs.get_question_text(questionId, lang).format(utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "formula")))
             
             # Get charge(s)
-            charge = f"[{utils.get_polyatomic_ion_data("num", polyatomicIonIds[i], "charge")}]"
+            charge = f"[{utils.get_polyatomic_ion_data('num', polyatomicIonIds[i], 'charge')}]"
             charge = utils.format_charges(charge)
             answers.append(charge)
     
     return (questions, answers)
 
-def generate_questions(element_question_types: list[str], polyatomic_ion_question_types: list[str], element_pool: list[int], polyatomic_ion_pool: list[int], count: int = 1, lang: str = "en", questionTypeWeights: list[int] | None = None) -> tuple[str, str]:
+def generate_questions(element_question_types: list[str], polyatomic_ion_question_types: list[str], element_pool: list[int], polyatomic_ion_pool: list[int], count: int = 1, lang: str = "en", questionTypeWeights: list[int] | None = None, return_question_types: bool = False) -> tuple[list[str], list[str], list[str]] |  tuple[list[str], list[str]]:
     """Generates questions."""
     questionIds = utils.random.choices(element_question_types + polyatomic_ion_question_types, weights=questionTypeWeights, k=count)
 
@@ -142,4 +142,16 @@ def generate_questions(element_question_types: list[str], polyatomic_ion_questio
             answers.append(p2[1][p2_count])
             p2_count += 1
 
-    return (questions, answers)
+    qTypes = ("ENTS", "STEN", "COFE", "COFS", "PNTF", "FTPN", "PNTC", "PFTC")
+    types = []
+    for question in questions:
+        for qType in qTypes:
+            if question.startswith(langs.get_question_text(qType, lang).split("{")[0]):
+                types.append(qType)
+                break
+    
+    if return_question_types:
+        return (questions, answers, types)
+
+    else:
+        return (questions, answers)

@@ -1,0 +1,44 @@
+{
+    "ENTS": {
+        "description": "Element Name To Symbol. The element's name is provided and the user must provide the element's symbol.",
+        "space_sensitive": true,
+        "captialisation_sensitive": true
+    },
+    "STEN": {
+        "description": "Symbol To Element Name. The element's symbol is provided and the user must provide the element's name.",
+        "space_sensitive": true,
+        "captialisation_sensitive": false
+    },
+    "COFE": {
+        "description": "Charge OF Element. The element's name is provided and the user must provide the element's charge(s).",
+        "space_sensitive": false,
+        "captialisation_sensitive": false
+    },
+    "COFS": {
+        "description": "Charge OF Symbol. The element's symbol is provided and the user must provide the element's charge(s).",
+        "space_sensitive": false,
+        "captialisation_sensitive": false
+    },
+
+
+    "PNTF": {
+        "description": "Polatomic ion Name To Formula. The polyatomic ion's name is provided and the user must provide the polyatomic ion's formula.",
+        "space_sensitive": true,
+        "captialisation_sensitive": true
+    },
+    "FTPN": {
+        "description": "Formula To Polatomic ion Name. The polyatomic ion's formula is provided and the user must provide the polyatomic ion's name.",
+        "space_sensitive": true,
+        "captialisation_sensitive": false
+    },
+    "PNTC": {
+        "description": "Polyatomic ion Name To Charge. The polyatomic ion's name is provided and the user must provide the polyatomic ion's charge(s).",
+        "space_sensitive": false,
+        "captialisation_sensitive": false
+    },
+    "PFTC": {
+        "description": "Polyatomic ion Formula To Charge. The polyatomic ion's formula is provided and the user must provide the polyatomic ion's charge(s).",
+        "space_sensitive": false,
+        "captialisation_sensitive": false
+    }
+}
