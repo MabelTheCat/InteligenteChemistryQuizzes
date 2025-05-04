@@ -48,7 +48,7 @@ def get_custom_element_pool(allowDuplicates: bool = True) -> list[int]:
     pool = pool.strip("()[]{}")
 
     # Check that the pool is valid (optional parentheses, then a list of valid atomic number, each seperated by a comma and optional whitespace)
-    if re.fullmatch(r"(\d{1,2}|10\d|11[0-8],\s*)*+\d{1,2}|10\d|11[0-8]\s*", pool):
+    if re.fullmatch(r"(([1-9]\d?|10\d|11[0-8]),\s*)*([1-9]\d?|10\d|11[0-8])\s*", pool):
 
         # Remove whitespace
         pool = pool.replace(" ", "").replace("  ", "").replace("\n", "")
