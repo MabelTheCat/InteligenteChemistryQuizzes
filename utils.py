@@ -9,7 +9,7 @@ import langs.langs as langs
 # Seeding
 def _init(lang: str):
     """Initialise random number generator"""
-    if input(langs.get_ui_text("utils.use_random_seed", lang)).upper() in langs.get_ui_text("utils.use_random_seed_yes", lang):
+    if input(langs.get_ui_text("utils.use_random_seed", lang)).upper() in langs.get_ui_text("confirm", lang):
         seed = random.randint(0, 2**31-1)
         random.seed(seed)
         print(langs.get_ui_text("utils.give_quiz_seed_value", lang).format(seed))
