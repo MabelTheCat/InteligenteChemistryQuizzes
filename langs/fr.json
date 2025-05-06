@@ -295,8 +295,12 @@
         "final_score": "Ton note finale est {0}/{1} ({2:.0f}%)!",
 
         "utils.use_random_seed": "Utiliser une graine de quiz aléatoire? [O/N]\t",
-        "utils.use_random_seed_yes": [
+        "confirm": [
             "O", "OUI"
+        ],
+        "deny": [
+            "N",
+            "NON"
         ],
 
         "utils.enter_quiz_seed": "Entrez la graine du quiz:\t",
@@ -304,7 +308,9 @@
         "utils.give_quiz_seed_value": "La graine du quiz est {0}. Vous pouvez utiliser cette graine pour re-obtenir les mêmes questions (avec la supposition que les paramètre du quiz sont les mêmes ou sont assez semblables).",
         "utils.ask_for_element_pool": "Entrez la liste d'éléments à utiliser (c pour commun, n pour tous les éléments naturels, a pour tous les éléments, u pour une liste personalisée):\t",
         
-        "utils.invalid_option": "Cela n'est pas une option valide."
+        "invalid_option": "Cela n'est pas une option valide.",
+        "do_another_quiz": "Est-ce que tu veut faire un autre quiz? [O/N]\t",
+        "is_charge_order_sensitive": "Est-ce que l'ordre des charges est important? (ex: Cu: 2+,+ strictemnt et +, 2+ vais être marqué comme incorrecte) [Y/N]\t"
     },
     "prefixes": {
         "1": "mono",

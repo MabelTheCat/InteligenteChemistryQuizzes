@@ -291,16 +291,23 @@
         "quiz_time_per_char": "You spend an average of {0} milliseconds per character typed (total of {1} characters to type).",
         "final_score": "Your total score is {0}/{1} ({2:.0f}%)!",
         "utils.use_random_seed": "Use random quiz seed? [Y/N]\t",
-        "utils.use_random_seed_yes": [
+        "confirm": [
             "Y",
             "YES"
         ],
+        "deny": [
+            "N",
+            "NO"
+        ],
+        
         "utils.enter_quiz_seed": "Enter quiz seed:\t",
         "utils.invalid_quiz_seed_entered": "That is not a valid seed. Please try again.",
         "utils.give_quiz_seed_value": "The quiz seed is {0}. You can use this seed to re-get the same questions (assuming that the settings are the same or similar enough).",
         "utils.ask_for_element_pool": "Enter pool of elements to use (c for common, n for all natural, a for all, u for custom):\t",
 
-        "utils.invalid_option": "That is not a valid option."
+        "invalid_option": "That is not a valid option.",
+        "do_another_quiz": "Do you want to do another quiz? [Y/N]\t",
+        "is_charge_order_sensitive": "Does the charge order matter? (ex: Cu: 2+,+ strictly and +, 2+ will be marked as incorrect) [Y/N]\t"
     },
     "prefixes": {
         "1": "mono",
