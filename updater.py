@@ -76,6 +76,9 @@ def run(lang: str = "en"):
     if (update_available := check_for_update(lang)):
         print(langs.get_updater_item("update_found", lang))
 
+        if input(langs.get_updater_item("ask_to_update", lang)).upper() not in langs.get_ui_text("confirm", lang):
+            return
+
         if input(langs.get_updater_item("request_update_type", lang)).upper() == "S":
             # Get the link to the zipped source code folder
             for asset in response.json()["assets"]:

@@ -337,6 +337,7 @@
     "updater": {
         "update_check": "Cherche des mises à jour...",
         "update_found": "Mise à jour trouvé.",
+        "ask_to_update": "Est-ce que tu veut faire une mise à jour? [O/N]:\t",
         "already_up_to_date": "L'application est déjà à jour.",
         "updating": "Mise à jour en progrès...\nProgression:",
         "update_complete": "\nMise à jour complet!",

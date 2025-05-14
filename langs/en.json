@@ -333,6 +333,7 @@
     "updater": {
         "update_check": "Checking for updates...",
         "update_found": "Update found.",
+        "ask_to_update": "Do you want to update? [Y/N]:\t",
         "already_up_to_date": "The app is already up to date.",
         "updating": "Updating...\nProgress:",
         "update_complete": "\nUpdate complete!",
