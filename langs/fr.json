@@ -333,5 +333,20 @@
 
         "ionic_binary_roman": "{metal} ({roman}) {nonmetal_prefix}{suffix}",
         "ionic_binary_named": "{nonmetal_prefix}{nonmetal_suffix} de {metal}{charge_suffix}"
+    },
+    "updater": {
+        "update_check": "Cherche des mises à jour...",
+        "update_found": "Mise à jour trouvé.",
+        "already_up_to_date": "L'application est déjà à jour.",
+        "updating": "Mise à jour en progrès...\nProgression:",
+        "update_complete": "\nMise à jour complet!",
+        "request_update_type": "Veut-tu faire une mise à jour pour le version exécutable [E] ou le code source [S]?\t",
+
+        "conn_failed": "\nConnection au server échoué. Veuillez vérifier le connection Internet et essayer encore.\nErreur: {0}",
+        "version_get_fail": "Version plus récent pas trouvé. Code d'erreur: {0}",
+        "local_version_not_found": "Version locale pas trouvé.",
+        "update_anyhow": "Faire mise à jour de toute façon? [O/N]:\t",
+
+        "window_close": "Ce fenêtre vais fermer automatiquement dans 20 secondes."
     }
 }

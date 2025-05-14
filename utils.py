@@ -46,6 +46,9 @@ with open(POLYATOMIC_ION_FILE_PATH, "r", encoding="utf-8") as datasheet:
 with open(QUESTION_DATA_PATH, "r", encoding="utf-8") as datasheet:
     QUESTION_DATA: dict = json.load(datasheet)
 
+def get_question_generation_data(question_type: str) -> dict:
+    return QUESTION_DATA[question_type]["generation_data"]
+
 def check_answer(user_answer: str, correct_answer: str, questionType: str, lang: str, charge_order_sensitive: bool = True):
     # Check if the question is case-sensitive
     case_sensitive_answer = QUESTION_DATA[questionType]["captialisation_sensitive"]

@@ -329,5 +329,20 @@
 
         "ionic_binary_roman": "{metal} ({roman}) {nonmetal_prefix}{suffix}",
         "ionic_binary_named": "{metal_root}{charge_suffix} {nonmetal}"
+    },
+    "updater": {
+        "update_check": "Checking for updates...",
+        "update_found": "Update found.",
+        "already_up_to_date": "The app is already up to date.",
+        "updating": "Updating...\nProgress:",
+        "update_complete": "\nUpdate complete!",
+        "request_update_type": "Do you want to update executable [E] or source code [S]?\t",
+
+        "conn_failed": "\nFailed to connect to server. Please check internet connection and try again.\nError: {0}",
+        "version_get_fail": "Failed to get version. Error code {0}",
+        "local_version_not_found": "Local version not found.",
+        "update_anyhow": "Update anyhow? [Y/N]:\t",
+
+        "window_close": "This window will close automatically in 20 seconds."
     }
 }

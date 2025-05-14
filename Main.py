@@ -2,6 +2,7 @@ import re
 import time
 from langs import langs
 import utils
+import updater
 
 while (LANG := input("Choose a language [en or fr]:\t").lower()) not in ("en", "fr"):
     print(f"Language {LANG} not supported.")
@@ -129,6 +130,7 @@ def run_quiz(settings: dict):
     print(f"\n{'*'*40}\n\n")
 
 if __name__ == "__main__":
+    updater.run(LANG)
     while True:
         settings = get_quiz_settings(LANG)
         run_quiz(settings)

@@ -87,6 +87,14 @@ def get_prefix(num: int | str, lang: str) -> str:
         return _DB[lang]["prefixes"][str(num)]
     raise Exception(f"The prefix for {num} is not supported.")
 
+def get_updater_item(textId: str, lang: str) -> str:
+    """General function to get any item from `_DB`"""
+    return _DB[lang]["updater"][textId]
+
+def get_updater_item(textId: str, lang: str) -> str:
+    """General function to get any item from `_DB`"""
+    return _DB[lang]["updater"][textId]
+
 def get_polyatomic_ion_name(id: int | str, lang: str) -> str:
     """Returns the name of the polyatomic ion in the requested language."""
     return _DB[lang]["polyatomic_ions"][str(id)]
